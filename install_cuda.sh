@@ -8,7 +8,7 @@ install_cuda() {
     if [[ ! -d ${DIR} ]]; then
       rm -rf /tmp/cuda
       mkdir /tmp/cuda
-      wget ${URL} > /tmp/cuda/combined.sh
+      wget -O /tmp/cuda/combined.sh ${URL}
       sh /tmp/cuda/combined.sh --extract=/tmp/cuda
       local LINUX=$(ls -1 /tmp/cuda/cuda-linux.$2*.run)
       ${LINUX} --prefix=${DIR} -noprompt -nosymlink -no-man-page
