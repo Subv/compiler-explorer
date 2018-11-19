@@ -11,7 +11,7 @@ COPY . /opt/compiler-explorer
 
 WORKDIR /opt/compiler-explorer
 
-RUN ./install_cuda.sh
+RUN /opt/compiler-explorer/install_cuda.sh
 
 RUN make prereqs EXTRA_ARGS='--language CUDA'
 

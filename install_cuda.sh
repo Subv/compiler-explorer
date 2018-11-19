@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 install_cuda() {
     local URL=$1
