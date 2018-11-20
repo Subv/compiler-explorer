@@ -42,6 +42,7 @@ require('../modes/haskell-mode');
 require('../modes/clean-mode');
 require('../modes/pascal-mode');
 require('../modes/cuda-mode');
+require('../modes/glsl-mode');
 require('../modes/fortran-mode');
 require('../modes/zig-mode');
 require('../modes/nc-mode');
