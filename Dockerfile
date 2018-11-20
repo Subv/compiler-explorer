@@ -7,11 +7,13 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 
 RUN apt-get update && apt-get install -y build-essential yarn
 
-COPY . /opt/compiler-explorer
+COPY install_cuda.sh /opt/compiler-explorer/install_cuda.sh
 
 WORKDIR /opt/compiler-explorer
 
 RUN /opt/compiler-explorer/install_cuda.sh
+
+COPY . /opt/compiler-explorer
 
 RUN make prereqs EXTRA_ARGS='--language CUDA'
 
