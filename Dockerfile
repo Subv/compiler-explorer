@@ -17,4 +17,4 @@ COPY . /opt/compiler-explorer
 
 RUN make prereqs EXTRA_ARGS='--language CUDA'
 
-CMD ["make", "run", "EXTRA_ARGS='--language CUDA'"]
+CMD ["node", "app.js", "--debug"]
