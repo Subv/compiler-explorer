@@ -13,9 +13,9 @@ WORKDIR /opt/compiler-explorer
 
 RUN /opt/compiler-explorer/install_cuda.sh
 
-COPY . /opt/compiler-explorer
-
 RUN make -j4 -C /opt/compiler-explorer/glsl
+
+COPY . /opt/compiler-explorer
 
 RUN make prereqs EXTRA_ARGS='--language CUDA'
 
