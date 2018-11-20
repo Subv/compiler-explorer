@@ -13,10 +13,14 @@ WORKDIR /opt/compiler-explorer
 
 RUN /opt/compiler-explorer/install_cuda.sh
 
+COPY glsl/ /opt/compiler-explorer/glsl
+
 RUN make -j4 -C /opt/compiler-explorer/glsl
 
 COPY . /opt/compiler-explorer
 
 RUN make prereqs EXTRA_ARGS='--language CUDA'
+
+RUN rm -Rf /opt/compiler-explorer/cuda/9.2.88/doc /opt/compiler-explorer/cuda/9.2.88/jre /opt/compiler-explorer/cuda/9.2.88/libnsight /opt/compiler-explorer/cuda/9.2.88/libnvvp /opt/compiler-explorer/cuda/9.2.88/nsightee_plugins
 
 CMD ["node", "app.js", "--debug"]
